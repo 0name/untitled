@@ -34,6 +34,14 @@ public class Bank {
     }
 
     static boolean transferMoney(Account src, Account dst, int amount) {
+        int srcTrans = src.getAmount();
+        int dstTrans = dst.getAmount();
+        srcTrans -= amount;
+        dstTrans += amount;
+
+
+        src.setAmount(srcTrans);
+        dst.setAmount(dstTrans);
         return true;
     }
 }
